@@ -8,7 +8,7 @@ from core.processor import FrameProcessor
 hdrs = (picolink, Meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"))
 app, rt = fast_app(hdrs=hdrs)
 
-loader = ModelLoader(models_dir="../models")
+loader = ModelLoader()
 processor = FrameProcessor()
 
 last_ts = 0

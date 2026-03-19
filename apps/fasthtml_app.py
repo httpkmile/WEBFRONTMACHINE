@@ -6,7 +6,7 @@ from core.models import ModelLoader
 from core.processor import FrameProcessor
 
 app, rt = fast_app(hdrs=(picolink,))
-loader = ModelLoader(models_dir="../models")
+loader = ModelLoader()
 processor = FrameProcessor()
 
 JS_CODE = """
@@ -56,7 +56,7 @@ ws.onmessage = (event) => {
 """
 
 @rt("/assets/{fname:path}")
-async def get(fname:str): return FileResponse(f"../assets/{fname}")
+async def get(fname:str): return FileResponse(f"assets/{fname}")
 
 @rt("/")
 def get():
