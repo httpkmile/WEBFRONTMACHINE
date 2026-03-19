@@ -1,0 +1,24 @@
+[project]
+name = "frontmachine"
+version = "0.1.0"
+description = "Gesture detection and object recognition interface"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "mediapipe",
+    "opencv-python",
+    "numpy",
+    "scikit-learn",
+    "joblib",
+    "ipykernel>=7.2.0",
+    "scipy>=1.17.1",
+    "threadpoolctl>=3.6.0",
+    "streamlit>=1.55.0",
+    "streamlit-webrtc>=0.64.5",
+    "av>=16.1.0",
+    "python-fasthtml>=0.12.50",
+    "uvicorn>=0.42.0",
+]
+
+[tool.uv]
+managed = true
