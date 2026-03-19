@@ -1,12 +1,10 @@
 from fasthtml.common import *
 import base64, cv2, numpy as np, time, os, sys, mediapipe as mp, json
 
-# Setup core - Caminho ajustado
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from core.models import ModelLoader
 from core.processor import FrameProcessor
 
-# Inicializa
 app, rt = fast_app(hdrs=(picolink,))
 loader = ModelLoader(models_dir="../models")
 processor = FrameProcessor()
@@ -99,4 +97,6 @@ async def ws(send, receive):
                         await send({'type': 'websocket.send', 'text': json.dumps({"image": f"data:image/jpeg;base64,{base64.b64encode(buffer).decode()}", "detections": detections, "gesture_image": gesture_image_name})})
             except: break
 
-if __name__ == "__main__": serve()
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    serve(port=port)

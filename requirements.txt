@@ -1,0 +1,10 @@
+python-fasthtml>=0.12.50
+uvicorn>=0.42.0
+mediapipe
+opencv-python-headless
+numpy
+scikit-learn
+joblib
+scipy
+threadpoolctl
+av
